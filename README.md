@@ -57,10 +57,23 @@ To help you build your first project, we have created reusable templates in the 
 
 ## 💡 How to Pivot Your Domain
 
-The most successful data analysts do not erase their past—they combine it with technical skills. Here are examples of high-value transitions:
+The most successful data analysts do not erase their past—they combine it with technical skills. Here are examples of high-value transitions across all major scientific and professional categories:
 
-*   **Finance/Accounting background** + SQL & BI = **Business Intelligence Analyst**
+*   **Finance/Accounting background** + SQL & BI = **Business Intelligence (BI) Analyst**
 *   **Human Resources (HR) background** + Excel & Python = **People Analytics Specialist**
 *   **Logistics/Supply Chain background** + SQL & Dashboards = **Operations Analyst**
-*   **Biology/Healthcare background** + Statistics & Python = **Healthcare Data Analyst**
+*   **Biology/Healthcare background** + Statistics & Python = **Healthcare Data Analyst / Clinical Informatics**
 *   **Humanities/Arts background** + LLM APIs & NLP = **Prompt Engineer / AI Operations Specialist**
+*   **Education/Teaching background** + Statistics & SQL = **Learning Analytics Specialist / EdTech Analyst**
+*   **Law/Legal background** + NLP & Compliance = **Legal Tech Analyst / Compliance Data Analyst**
+*   **Psychology background** + Web Clickstreams & K-Means = **User Experience (UX) Researcher / Behavioral Analyst**
+*   **Environmental/Agri background** + Time Series & Forecasting = **Environmental Data Analyst**
+*   **Architecture/Civil Eng background** + Spatial Mapping & GIS = **Spatial Data Analyst / Real Estate BI**
+*   **Hospitality/Tourism background** + SQL window functions = **Revenue Management Analyst**
+*   **Sociology/Policy background** + Census data & Clustering = **Policy Analyst / Social Science Researcher**
+*   **Journalism/Media background** + Text sentiment & metrics = **Audience Insights Analyst / Content Specialist**
+*   **Chemistry/Materials background** + Regression & Process yields = **Cheminformatics Analyst / Process Analyst**
+*   **Physics/Astronomy background** + Computations & Simulations = **Quantitative Research Analyst (Quant)**
+*   **Geology/Earth background** + Spatial mapping & Sensors = **GIS & Geospatial Data Specialist**
+*   **Mathematics/Statistics background** + Risk analytics & Modeling = **Risk Actuary / Quantitative Analyst**
+*   **Economics background** + Econometrics & Index analysis = **Economic Policy Analyst / Econometrician**

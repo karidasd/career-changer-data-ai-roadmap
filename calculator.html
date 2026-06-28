@@ -178,15 +178,46 @@
         </header>
 
         <div class="form-group">
-            <label for="domain-select">Your Current Domain / Degree:</label>
+            <label for="domain-select">Your Current Domain / Science:</label>
             <select id="domain-select">
-                <option value="" disabled selected>-- Choose your background --</option>
-                <option value="hr">Human Resources (HR)</option>
-                <option value="finance">Finance / Accounting</option>
-                <option value="logistics">Logistics / Operations / Supply Chain</option>
-                <option value="marketing">Marketing / Sales / Communication</option>
-                <option value="health">Biology / Healthcare / Medicine</option>
-                <option value="humanities">Humanities / Languages / Arts</option>
+                <option value="" disabled selected>-- Choose your academic background --</option>
+                
+                <optgroup label="Life & Medical Sciences">
+                    <option value="health">Biology / Medicine / Healthcare / Pharmacy</option>
+                    <option value="psychology">Psychology / Cognitive Science</option>
+                </optgroup>
+                
+                <optgroup label="Physical & Chemical Sciences">
+                    <option value="chemistry">Chemistry / Chemical Engineering / Material Science</option>
+                    <option value="physics">Physics / Astronomy / Space Sciences</option>
+                    <option value="geology">Geology / Geophysics / Earth Sciences</option>
+                </optgroup>
+                
+                <optgroup label="Formal Sciences">
+                    <option value="math">Mathematics / Statistics / Actuarial Science</option>
+                </optgroup>
+                
+                <optgroup label="Social & Behavioral Sciences">
+                    <option value="economics">Economics / Econometrics</option>
+                    <option value="policy">Sociology / Political Science / Public Policy</option>
+                </optgroup>
+                
+                <optgroup label="Applied Sciences & Business">
+                    <option value="hr">Human Resources (HR) & Management</option>
+                    <option value="finance">Finance / Accounting / Auditing</option>
+                    <option value="logistics">Logistics / Supply Chain / Industrial Engineering</option>
+                    <option value="marketing">Marketing / Sales / Advertising</option>
+                    <option value="environment">Environmental Science / Agriculture / Forestry</option>
+                    <option value="architecture">Architecture / Civil Engineering / Construction</option>
+                </optgroup>
+                
+                <optgroup label="Humanities, Arts & Media">
+                    <option value="humanities">Literature / Languages / History / Philosophy</option>
+                    <option value="education">Education / Teaching / Pedagogy</option>
+                    <option value="law">Law / Legal Studies / Compliance</option>
+                    <option value="tourism">Hospitality / Tourism / Culinary Arts</option>
+                    <option value="journalism">Journalism / Media / Film / Writing</option>
+                </optgroup>
             </select>
         </div>
 
@@ -254,6 +285,84 @@
                 kpis: "Customer sentiment scores, text categorization accuracy, chat agent response speeds, prompt latency.",
                 project: "Configure a sentiment analysis pipeline that reads e-commerce customer feedback and writes structured JSON summaries, using custom LLM prompting templates to classify tickets.",
                 kaggle: "Search Kaggle for: 'Amazon Customer Reviews' or 'Twitter Sentiment Dataset'."
+            },
+            "education": {
+                title: "Learning Analytics Specialist / EdTech Analyst",
+                kpis: "Student completion rates, learning path engagement drop-offs, quiz score averages, assessment pass rates.",
+                project: "Create an interactive Streamlit dashboard showing student progress over time, using a regression model to estimate course completion times based on early module scores.",
+                kaggle: "Search Kaggle for: 'EdTech Student Engagement' or 'Online Course Performance'."
+            },
+            "law": {
+                title: "Legal Tech Analyst / Compliance Data Analyst",
+                kpis: "Contract processing cycle times, regulatory risk scores, audit failure rates, document search accuracy.",
+                project: "Build an NLP classification script that parses contract clauses to flag high-risk terms and categorizes them by risk level (Low/Medium/High).",
+                kaggle: "Search Kaggle for: 'Legal Text Classification' or 'Financial Fraud / Regulatory Compliance'."
+            },
+            "psychology": {
+                title: "User Experience (UX) Researcher / Behavioral Data Analyst",
+                kpis: "Task completion rates, user click path patterns, session duration averages, bounce rates.",
+                project: "Perform a customer clickstream session clustering analysis using K-Means to identify distinct user behavioral archetypes and path friction points.",
+                kaggle: "Search Kaggle for: 'Website Clickstream Data' or 'User Usability Test Results'."
+            },
+            "environment": {
+                title: "Environmental Data Analyst / Precision Agriculture Analyst",
+                kpis: "Carbon emission scores, crop yield counts, resource usage efficiency, temperature anomalies.",
+                project: "Write an ARIMA time series forecasting model predicting weekly water or energy consumption patterns based on temperature and humidity logs.",
+                kaggle: "Search Kaggle for: 'Daily Climate Data' or 'Precision Agriculture Dataset'."
+            },
+            "architecture": {
+                title: "Spatial Data Analyst / Real Estate BI Specialist",
+                kpis: "Price per square foot averages, geographic location densities, building occupancy rates.",
+                project: "Map geographical property valuations using a regression model to estimate price variations based on proximity to public transit and local amenities.",
+                kaggle: "Search Kaggle for: 'House Prices: Advanced Regression' or 'New York City Airbnb Open Data'."
+            },
+            "tourism": {
+                title: "Revenue Management Analyst / Hospitality Analyst",
+                kpis: "Average Daily Rate (ADR), Revenue Per Available Room (RevPAR), customer satisfaction, booking cancellations.",
+                project: "Implement a SQL LAG window function query analyzing hotel booking intervals and cancellations, and build a Streamlit booking dashboard.",
+                kaggle: "Search Kaggle for: 'Hotel Booking Demand' or 'Customer Satisfaction Reviews'."
+            },
+            "policy": {
+                title: "Policy Analyst / Social Science Data Researcher",
+                kpis: "Economic indicator changes, public funding distributions, census cohort counts, voting margins.",
+                project: "Write a demographic data clustering script using census data to profile public funding needs across regional municipal cohorts.",
+                kaggle: "Search Kaggle for: 'US Census Data' or 'World Bank Global Indicators'."
+            },
+            "journalism": {
+                title: "Audience Insights Analyst / Content Performance Specialist",
+                kpis: "Reader retention times, social media share rates, video watch duration averages, subscriber growth.",
+                project: "Construct an NLP sentiment analysis dashboard of article comments, highlighting top positive and negative topics to guide content strategies.",
+                kaggle: "Search Kaggle for: 'News Article Comments' or 'Social Media Engagement Dataset'."
+            },
+            "chemistry": {
+                title: "Cheminformatics Analyst / Chemical Process Analyst",
+                kpis: "Chemical reaction yields, molecular binding scores, raw material consumption rates, batch process duration.",
+                project: "Design an analysis pipeline showing chemical batch properties, using a regression model to estimate product yield based on temperature and reaction times.",
+                kaggle: "Search Kaggle for: 'Chemical Compounds Dataset' or 'Materials Science Yield Logs'."
+            },
+            "physics": {
+                title: "Quantitative Research Analyst (Quant) / Computational Scientist",
+                kpis: "Time series asset volatility, simulation error margins, sensor signal ratios, compute resource usage.",
+                project: "Build a high-performance simulation analyzer comparing time series price volatility trends, using statistical t-tests to evaluate algorithmic predictions.",
+                kaggle: "Search Kaggle for: 'Financial Time Series Volatility' or 'NASA Jet Propulsion Logs'."
+            },
+            "geology": {
+                title: "GIS & Geospatial Data Specialist / Earth Science Analyst",
+                kpis: "Elevation coordinates, seismological vibrations, soil moisture scores, satellite pixel variations.",
+                project: "Map spatial locations of environmental sensors to analyze geographical anomalies, using a regression model to predict soil quality based on elevation and moisture.",
+                kaggle: "Search Kaggle for: 'Earthquake Seismology Data' or 'Geospatial Soil Sensors'."
+            },
+            "math": {
+                title: "Quantitative Analyst / Research Scientist / Risk Actuary",
+                kpis: "Probability distribution parameters, risk margins, model loss/cost metrics, asset decay rates.",
+                project: "Construct an advanced statistical risk model using Monte Carlo simulations, evaluating probability density functions to estimate pricing variations.",
+                kaggle: "Search Kaggle for: 'Actuarial Risk Modeling' or 'Stock Price Monte Carlo'."
+            },
+            "economics": {
+                title: "Economic Policy Analyst / Econometrician",
+                kpis: "Elasticity coefficients, unemployment rates, Consumer Price Index (CPI), consumer spending habits.",
+                project: "Run an econometric analysis on inflation trends, using SQL window functions to track index fluctuations across regional product cohorts.",
+                kaggle: "Search Kaggle for: 'Global Inflation CPI Dataset' or 'Economic Indicators History'."
             }
         };
 
