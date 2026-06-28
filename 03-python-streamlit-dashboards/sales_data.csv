@@ -1,0 +1,16 @@
+Order_Date,Region,Product_Category,Revenue
+2026-01-01,North,Electronics,1200
+2026-01-02,South,Furniture,850
+2026-01-03,North,Office Supplies,300
+2026-01-04,East,Electronics,1500
+2026-01-05,West,Furniture,950
+2026-01-06,South,Office Supplies,150
+2026-01-07,East,Furniture,1100
+2026-01-08,West,Electronics,1350
+2026-01-09,North,Office Supplies,400
+2026-01-10,South,Electronics,980
+2026-01-11,East,Furniture,1250
+2026-01-12,West,Office Supplies,250
+2026-01-13,North,Electronics,1600
+2026-01-14,South,Furniture,700
+2026-01-15,East,Office Supplies,500

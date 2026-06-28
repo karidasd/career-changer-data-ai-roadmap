@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domain Pivot Calculator - Career Changer Roadmap</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-main: #06040b;
+            --bg-card: rgba(16, 12, 32, 0.7);
+            --border-card: rgba(255, 255, 255, 0.08);
+            --text-main: #f5f3f7;
+            --text-muted: #9f9aae;
+            --clr-accent: #9d4edd;
+            --clr-accent-glow: rgba(157, 78, 221, 0.2);
+            --clr-success: #00e676;
+            --clr-blue: #00b4d8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.6;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(157, 78, 221, 0.04) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(0, 180, 216, 0.04) 0%, transparent 40%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1rem;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Outfit', sans-serif;
+            letter-spacing: -0.02em;
+        }
+
+        .calculator-card {
+            max-width: 650px;
+            width: 100%;
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-card);
+            border-radius: 20px;
+            padding: 2.5rem;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #00b4d8 0%, #9d4edd 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .header p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+
+        select {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background-color: #0c0915;
+            border: 1px solid var(--border-card);
+            border-radius: 8px;
+            color: var(--text-main);
+            font-size: 0.95rem;
+            outline: none;
+            cursor: pointer;
+            transition: border-color 0.3s;
+        }
+
+        select:focus {
+            border-color: var(--clr-blue);
+        }
+
+        /* Results Panel */
+        .results-panel {
+            margin-top: 2rem;
+            border-top: 1px solid var(--border-card);
+            padding-top: 2rem;
+            display: none;
+            animation: fadeIn 0.4s ease-out forwards;
+        }
+
+        .result-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .result-section h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--clr-blue);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .result-section p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            background-color: rgba(255,255,255,0.02);
+            padding: 0.8rem 1rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.03);
+        }
+
+        .job-title-box {
+            background: linear-gradient(135deg, rgba(0, 180, 216, 0.1) 0%, rgba(157, 78, 221, 0.1) 100%);
+            border: 1.5px dashed var(--clr-accent) !important;
+            color: white !important;
+            font-size: 1.2rem !important;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        footer {
+            margin-top: 2rem;
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+        footer a {
+            color: var(--clr-blue);
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator-card">
+        <header class="header">
+            <h1>Domain Pivot Calculator</h1>
+            <p>Select your background to discover how to merge your past expertise with Data Science & AI.</p>
+        </header>
+
+        <div class="form-group">
+            <label for="domain-select">Your Current Domain / Degree:</label>
+            <select id="domain-select">
+                <option value="" disabled selected>-- Choose your background --</option>
+                <option value="hr">Human Resources (HR)</option>
+                <option value="finance">Finance / Accounting</option>
+                <option value="logistics">Logistics / Operations / Supply Chain</option>
+                <option value="marketing">Marketing / Sales / Communication</option>
+                <option value="health">Biology / Healthcare / Medicine</option>
+                <option value="humanities">Humanities / Languages / Arts</option>
+            </select>
+        </div>
+
+        <div class="results-panel" id="results-panel">
+            <div class="result-section">
+                <h3><i class="fa-solid fa-briefcase"></i> Your Target Job Title</h3>
+                <p class="job-title-box" id="result-title">People Analytics Specialist</p>
+            </div>
+
+            <div class="result-section">
+                <h3><i class="fa-solid fa-bullseye"></i> Core Domain KPIs to Focus On</h3>
+                <p id="result-kpis">Employee churn rates, recruitment funnels, training ROI.</p>
+            </div>
+
+            <div class="result-section">
+                <h3><i class="fa-solid fa-code"></i> Recommended Portfolio Project</h3>
+                <p id="result-project">Build a Streamlit dashboard showing employee turnover rate by department and use a Logistic Regression model to predict which employee is likely to quit next.</p>
+            </div>
+
+            <div class="result-section">
+                <h3><i class="fa-solid fa-magnifying-glass-chart"></i> Kaggle Dataset Search Terms</h3>
+                <p id="result-kaggle">"HR Employee Attrition", "Employee Performance Dataset"</p>
+            </div>
+        </div>
+
+        <footer>
+            <p>Back to the <a href="README.md">Career Changer Roadmap</a></p>
+        </footer>
+    </div>
+
+    <script>
+        const pivotData = {
+            "hr": {
+                title: "People Analytics Specialist / HR Analyst",
+                kpis: "Employee attrition/turnover, recruitment funnel conversion, training ROI, gender pay gaps.",
+                project: "Develop an interactive Streamlit dashboard mapping employee retention statistics, using a Random Forest model to flag employee attrition risks.",
+                kaggle: "Search Kaggle for: 'IBM HR Analytics Employee Attrition' or 'Employee Performance Dataset'."
+            },
+            "finance": {
+                title: "Business Intelligence (BI) Analyst / Financial Analyst",
+                kpis: "Customer Lifetime Value (CLV), Monthly Recurring Revenue (MRR), cash flow trends, budget variances.",
+                project: "Analyze customer subscription purchases using SQL LAG window functions to rank monthly recurring revenue cohorts and predict transaction defaults.",
+                kaggle: "Search Kaggle for: 'E-commerce Sales Dataset' or 'Credit Card Default Dataset'."
+            },
+            "logistics": {
+                title: "Operations Analyst / Supply Chain Analyst",
+                kpis: "Order fulfillment lead times, inventory turnover ratios, delivery delay rates, route costs.",
+                project: "Build an interactive dashboard mapping inventory logs to visualize delay frequencies, integrating an anomaly detector to highlight shipment cost outliers.",
+                kaggle: "Search Kaggle for: 'Supply Chain Shipping Data' or 'Warehouse Inventory Dataset'."
+            },
+            "marketing": {
+                title: "Marketing Analyst / Customer Segmentation Specialist",
+                kpis: "Click-Through Rate (CTR), Customer Acquisition Cost (CAC), Return on Ad Spend (ROAS), churn.",
+                project: "Perform RFM (Recency, Frequency, Monetary) clustering using K-Means to segment customers into marketing target lists, auto-generating localized email campaigns via LLM APIs.",
+                kaggle: "Search Kaggle for: 'Marketing Campaign Dataset' or 'E-Commerce User Behaviour'."
+            },
+            "health": {
+                title: "Healthcare Data Analyst / Clinical Informatics Analyst",
+                kpis: "Patient readmission rates, hospital stay durations, treatment efficacy, clinic waiting times.",
+                project: "Design a clinical informatics analysis predicting patient readmission odds, using statistical significance tests (t-tests) to verify treatment efficacy over control groups.",
+                kaggle: "Search Kaggle for: 'Hospital Readmissions Dataset' or 'Heart Disease Classification'."
+            },
+            "humanities": {
+                title: "Prompt Engineer / AI Operations Specialist / NLP Analyst",
+                kpis: "Customer sentiment scores, text categorization accuracy, chat agent response speeds, prompt latency.",
+                project: "Configure a sentiment analysis pipeline that reads e-commerce customer feedback and writes structured JSON summaries, using custom LLM prompting templates to classify tickets.",
+                kaggle: "Search Kaggle for: 'Amazon Customer Reviews' or 'Twitter Sentiment Dataset'."
+            }
+        };
+
+        const selectEl = document.getElementById("domain-select");
+        const resultsPanel = document.getElementById("results-panel");
+        const resultTitle = document.getElementById("result-title");
+        const resultKpis = document.getElementById("result-kpis");
+        const resultProject = document.getElementById("result-project");
+        const resultKaggle = document.getElementById("result-kaggle");
+
+        selectEl.addEventListener("change", function() {
+            const val = this.value;
+            const data = pivotData[val];
+            if (data) {
+                resultTitle.innerText = data.title;
+                resultKpis.innerText = data.kpis;
+                resultProject.innerText = data.project;
+                resultKaggle.innerText = data.kaggle;
+                
+                resultsPanel.style.display = "block";
+            }
+        });
+    </script>
+</body>
+</html>
