@@ -4,22 +4,24 @@
   <img src="assets/banner.png" alt="Career Changer: Data & AI Analyst Roadmap" width="100%" />
 </p>
 
-Welcome to the **Career Changer: From Any Degree to Data & AI Analyst Roadmap**! This repository is a free, self-paced, hands-on learning roadmap designed specifically for individuals from non-technical backgrounds (such as Finance, Humanities, HR, Logistics, or Healthcare) transitioning into the data and AI space.
+Welcome to the **Career Changer: From Any Degree to Data & AI Analyst Portal**! This repository is a ready-to-deploy, fully interactive Learning Management System (LMS) web application designed specifically for individuals from non-technical backgrounds (such as Finance, Humanities, HR, Logistics, or Healthcare) transitioning into the data and AI space.
 
-Unlike standard, cliché tutorials, this roadmap focuses on **modern, AI-augmented analytics workflows**—teaching you how to collaborate with AI (like Claude and ChatGPT) to query databases, write scripts, and deploy interactive applications.
+👉 **[Launch the Interactive Career Changer Portal Live!](https://karidasd.github.io/career-changer-data-ai-roadmap/)**
 
 ---
 
-## 🧮 Interactive Tool: Domain Pivot Calculator
+## 🎮 Portal Features & Live Simulators
 
-We have built a custom, interactive web application directly inside this repository. Open it to find your personalized transition path:
-👉 **[Open the Domain Pivot Calculator Live!](https://karidasd.github.io/career-changer-data-ai-roadmap/calculator.html)**
+Unlike standard static guides, this repository deploys a complete single-page application with native client-side simulators:
 
-Select your previous degree or job, and the calculator will instantly output:
-*   Your target role (e.g., *People Analytics Specialist*, *Operations Analyst*).
-*   Core KPIs and domain metrics to focus on.
-*   A customized portfolio project idea.
-*   Search terms to find the best datasets on Kaggle.
+1.  **Dynamic 4-Stage Roadmap**: Glowing visual cards mapping the exact skill curriculum across Excel, SQL, Python/Dashboards, and AI Agents.
+2.  **Domain Pivot Calculator (19 Sciences)**: Organized dropdown separating Life, Physical, Formal, Social, Applied, and Humanities sciences. Select your background to instantly get:
+    *   Your target role (e.g., *People Analytics Specialist*, *Cheminformatics Analyst*).
+    *   Core industry KPIs to learn.
+    *   A custom portfolio project idea.
+    *   Search terms to find datasets on Kaggle.
+3.  **Streamlit Web App Simulator**: View Streamlit Python code on the left and interact with a live simulated dashboard on the right (filtering regions, updating KPI metrics, and rendering interactive bar charts).
+4.  **AI SQL Agent Simulator**: Interactive command-line terminal simulation showing the exact RAG pipeline—how a natural language question is translated into SQL, run on SQLite, and returned as a conversational summary.
 
 ---
 
