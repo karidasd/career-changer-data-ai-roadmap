@@ -14,7 +14,7 @@ Welcome to the **Career Changer: From Any Degree to Data & AI Analyst Portal**! 
 
 Unlike standard static guides, this repository deploys a complete single-page application with native client-side simulators:
 
-1.  **Dynamic 4-Stage Roadmap**: Glowing visual cards mapping the exact skill curriculum across Excel, SQL, Python/Dashboards, and AI Agents.
+1.  **Dynamic 6-Stage Roadmap**: Visual cards mapping the exact skill curriculum across Excel, SQL, Python/Dashboards, AI Agents, Structured Prompting, and Multi-Agent Crews.
 2.  **Domain Pivot Calculator (19 Sciences)**: Organized dropdown separating Life, Physical, Formal, Social, Applied, and Humanities sciences. Select your background to instantly get:
     *   Your target role (e.g., *People Analytics Specialist*, *Cheminformatics Analyst*).
     *   Core industry KPIs to learn.
@@ -25,27 +25,58 @@ Unlike standard static guides, this repository deploys a complete single-page ap
 
 ---
 
-## 🗺️ The 4-Stage Learning Path
+## 🛤️ Choose Your Learning Pathway (Tracks)
+
+To suit your career targets and background, this roadmap offers two distinct specializations:
+
+*   **Track A: Business Analytics & AI Insights**
+    *   *Ideal for*: Career changers targeting BI Analyst, HR Analyst, Marketing Specialist, Operations Analyst, or legal tech roles.
+    *   *Syllabus path*: **Stage 1 $\rightarrow$ Stage 2 $\rightarrow$ Stage 3 $\rightarrow$ Stage 5**
+    *   *Focus*: KPI dashboard design, prompt-based data cleaning, and structured feedback tagging.
+*   **Track B: AI Data Engineering & Agentic Systems**
+    *   *Ideal for*: Technical career changers targeting Analytics Engineer, AI Operator, or RAG Developer roles.
+    *   *Syllabus path*: **Stage 2 $\rightarrow$ Stage 3 $\rightarrow$ Stage 4 $\rightarrow$ Stage 6**
+    *   *Focus*: Text-to-SQL databases, autonomous LLM tool integrations, and collaborative multi-agent crews.
+
+---
+
+## 🗺️ The 6-Stage Curriculum & Prompting Focus
 
 ### 📊 Stage 1: Modern Excel & AI Formula Engineering (Weeks 1-3)
 *   **Objective**: Master data modeling and business diagnostics using the latest Excel features and AI prompts.
 *   **Key Skills**: Dynamic Array spilling (`FILTER`, `UNIQUE`, `SORT`), next-gen lookups (`XLOOKUP`), and prompting LLMs to write complex nested calculations.
+*   **Prompting Focus**: Formula generation templates.
 *   **Code & Practice**: [01-modern-excel-ai/](01-modern-excel-ai/)
 
 ### 🗄️ Stage 2: Analytical SQL & LLM Co-Pilots (Weeks 4-7)
 *   **Objective**: Retrieve and model database tables using analytical structures and AI SQL generators.
 *   **Key Skills**: Common Table Expressions (CTEs) for modular queries, Window Functions (`LAG()`, `DENSE_RANK()`) for trend and cohort analysis, and schema-based SQL prompting.
+*   **Prompting Focus**: Schema-to-SQL translation prompts.
 *   **Code & Practice**: [02-analytical-sql-agents/](02-analytical-sql-agents/)
 
 ### 🐍 Stage 3: Python Pandas & Streamlit Web Dashboards (Weeks 8-12)
 *   **Objective**: Go beyond static scripts. Learn Pandas data manipulation and deploy interactive web applications.
 *   **Key Skills**: Pandas aggregations (`groupby`, `pivot_table`) and building full-featured web dashboards in under 50 lines of code using **Streamlit**.
+*   **Prompting Focus**: Streamlit layout and visualization wireframes.
 *   **Code & Practice**: [03-python-streamlit-dashboards/](03-python-streamlit-dashboards/)
 
-### 🤖 Stage 4: AI Agents & Conversational RAG Analytics (Weeks 13+)
+### 🤖 Stage 4: AI Agents & Conversational RAG Analytics (Weeks 13-15)
 *   **Objective**: Build and understand the future of analytics—autonomous AI agents that read database tables.
 *   **Key Skills**: Text-to-SQL translation, autonomous tool calls, and grounding LLM responses with SQL results (Retrieval-Augmented Generation).
+*   **Prompting Focus**: AI tool-calling descriptions and query grounding.
 *   **Code & Practice**: [04-ai-agents-rag-analytics/](04-ai-agents-rag-analytics/)
+
+### 🛡️ Stage 5: Advanced Prompting & Data Augmentation (Weeks 16-18)
+*   **Objective**: Scrape, structure, and label unstructured logs and reviews using advanced language model controls.
+*   **Key Skills**: Few-shot classification, PII anonymization pipelines, and Chain-of-Thought (CoT) data auditing.
+*   **Prompting Focus**: Structured JSON output mode constraints.
+*   **Code & Practice**: [05-prompt-engineering-data/](05-prompt-engineering-data/)
+
+### 🔗 Stage 6: Autonomous Multi-Agent Crews (Weeks 19+)
+*   **Objective**: Orchestrate multiple specialized AI agents that pass messages, audit code, and compile briefings.
+*   **Key Skills**: LangGraph/CrewAI coordination architectures, Vector DB semantics, and autonomous Python code executors.
+*   **Prompting Focus**: Agent persona/role descriptions and tool parameters.
+*   **Code & Practice**: [06-multi-agent-analytics/](06-multi-agent-analytics/)
 
 ---
 

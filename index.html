@@ -586,7 +586,7 @@
 
         <!-- Tabs Navigation -->
         <nav class="tabs-nav">
-            <button class="tab-btn active" data-tab="roadmap"><i class="fa-solid fa-map"></i> 4-Stage Roadmap</button>
+            <button class="tab-btn active" data-tab="roadmap"><i class="fa-solid fa-map"></i> 6-Stage Roadmap & Tracks</button>
             <button class="tab-btn" data-tab="calculator"><i class="fa-solid fa-calculator"></i> Domain Pivot Calculator</button>
             <button class="tab-btn" data-tab="streamlit"><i class="fa-solid fa-cubes"></i> Streamlit Simulator</button>
             <button class="tab-btn" data-tab="sql-agent"><i class="fa-solid fa-terminal"></i> AI SQL Agent Sim</button>
@@ -595,55 +595,99 @@
         <!-- Tab 1: Roadmap -->
         <section class="tab-panel active" id="panel-roadmap">
             <div class="glass-card">
-                <h2 style="margin-bottom: 1.5rem;"><i class="fa-solid fa-graduation-cap"></i> Interactive Syllabus Path</h2>
+                <h2 style="margin-bottom: 1.5rem;"><i class="fa-solid fa-graduation-cap"></i> Interactive Syllabus Path & Specialization Tracks</h2>
+                
+                <!-- Dual Learning Tracks Guide -->
+                <div class="track-guide-box" style="display: flex; gap: 1.5rem; margin-bottom: 2.5rem; background-color: rgba(255,255,255,0.01); border: 1px solid var(--border-card); padding: 1.5rem; border-radius: 12px; font-size: 0.9rem; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 280px;">
+                        <h3 style="color: var(--clr-blue); margin-bottom: 0.5rem;"><i class="fa-solid fa-chart-line"></i> Track A: Business Analytics & AI Insights</h3>
+                        <p style="color: var(--text-muted);">Aimed at BI Analysts, Operations Analysts, People Analysts, or Marketing Specialists. Prioritizes dashboards, KPIs, and data cleansing operations.</p>
+                        <strong style="color: var(--clr-blue); display: block; margin-top: 0.5rem; font-size: 0.85rem; text-transform: uppercase;">Path: Stages 1 → 2 → 3 → 5</strong>
+                    </div>
+                    <div class="track-divider" style="width: 1px; background-color: var(--border-card);"></div>
+                    <div style="flex: 1; min-width: 280px;">
+                        <h3 style="color: var(--clr-accent); margin-bottom: 0.5rem;"><i class="fa-solid fa-brain"></i> Track B: AI Data Engineering & Agentic Systems</h3>
+                        <p style="color: var(--text-muted);">Aimed at AI Operators, Analytics Engineers, or RAG Engineers. Prioritizes building conversational database agents, pipelines, and autonomous crews.</p>
+                        <strong style="color: var(--clr-accent); display: block; margin-top: 0.5rem; font-size: 0.85rem; text-transform: uppercase;">Path: Stages 2 → 3 → 4 → 6</strong>
+                    </div>
+                </div>
+
                 <div class="roadmap-grid">
                     <!-- Stage 1 -->
                     <div class="stage-card stage-1">
                         <div class="stage-num">Stage 1: Excel & AI</div>
                         <h3>Modern Excel Formulas</h3>
-                        <p style="font-size: 0.9rem; color: var(--text-muted);">Master dynamic array spilling and AI formula generation workflows.</p>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;">Master dynamic array spilling and AI formula generators.</p>
+                        <div style="font-size: 0.8rem; color: var(--clr-blue); font-weight: 600; margin-bottom: 0.5rem;"><i class="fa-solid fa-message"></i> Prompting: Formula Generation</div>
                         <ul class="stage-skills">
                             <li><i class="fa-solid fa-circle-play"></i> UNIQUE & FILTER Arrays</li>
-                            <li><i class="fa-solid fa-circle-play"></i> XLOOKUP Dynamic Search</li>
-                            <li><i class="fa-solid fa-circle-play"></i> Prompting Excel Logic</li>
+                            <li><i class="fa-solid fa-circle-play"></i> XLOOKUP Multi-return</li>
+                            <li><i class="fa-solid fa-circle-play"></i> Prompting Nested Logic</li>
                         </ul>
                     </div>
                     <!-- Stage 2 -->
                     <div class="stage-card stage-2">
                         <div class="stage-num">Stage 2: Databases</div>
                         <h3>Analytical SQL</h3>
-                        <p style="font-size: 0.9rem; color: var(--text-muted);">Retrieve complex relational data models using analytical partitions.</p>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;">Retrieve complex relational data models using analytical partitions.</p>
+                        <div style="font-size: 0.8rem; color: var(--clr-accent); font-weight: 600; margin-bottom: 0.5rem;"><i class="fa-solid fa-message"></i> Prompting: Schema Translation</div>
                         <ul class="stage-skills">
                             <li><i class="fa-solid fa-circle-play"></i> Common Table Expressions</li>
-                            <li><i class="fa-solid fa-circle-play"></i> LAG & LEAD Functions</li>
-                            <li><i class="fa-solid fa-circle-play"></i> Auto-query Generation</li>
+                            <li><i class="fa-solid fa-circle-play"></i> LAG & LEAD Cohorts</li>
+                            <li><i class="fa-solid fa-circle-play"></i> SQL Query Auto-generation</li>
                         </ul>
                     </div>
                     <!-- Stage 3 -->
                     <div class="stage-card stage-3">
                         <div class="stage-num">Stage 3: Dashboards</div>
                         <h3>Python Streamlit</h3>
-                        <p style="font-size: 0.9rem; color: var(--text-muted);">Go beyond code. Deploy interactive web dashboards locally under 50 lines.</p>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;">Deploy interactive web dashboards locally under 50 lines.</p>
+                        <div style="font-size: 0.8rem; color: var(--clr-gold); font-weight: 600; margin-bottom: 0.5rem;"><i class="fa-solid fa-message"></i> Prompting: UI Layout Design</div>
                         <ul class="stage-skills">
                             <li><i class="fa-solid fa-circle-play"></i> Pandas Data Aggregation</li>
-                            <li><i class="fa-solid fa-circle-play"></i> Streamlit Metric Widgets</li>
-                            <li><i class="fa-solid fa-circle-play"></i> Interactive Data Tables</li>
+                            <li><i class="fa-solid fa-circle-play"></i> Streamlit Selectbox Filters</li>
+                            <li><i class="fa-solid fa-circle-play"></i> Sidebar & Chart Rendering</li>
                         </ul>
                     </div>
                     <!-- Stage 4 -->
                     <div class="stage-card stage-4">
                         <div class="stage-num">Stage 4: Agentic RAG</div>
                         <h3>AI Data Agents</h3>
-                        <p style="font-size: 0.9rem; color: var(--text-muted);">Build autonomous systems translating text to database calls.</p>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;">Build autonomous systems translating text to database calls.</p>
+                        <div style="font-size: 0.8rem; color: var(--clr-success); font-weight: 600; margin-bottom: 0.5rem;"><i class="fa-solid fa-message"></i> Prompting: Text-to-SQL Systems</div>
                         <ul class="stage-skills">
-                            <li><i class="fa-solid fa-circle-play"></i> Text-to-SQL Translation</li>
-                            <li><i class="fa-solid fa-circle-play"></i> Autonomous Tool Use</li>
-                            <li><i class="fa-solid fa-circle-play"></i> grounded RAG Synthesis</li>
+                            <li><i class="fa-solid fa-circle-play"></i> Text-to-SQL Grounding</li>
+                            <li><i class="fa-solid fa-circle-play"></i> Autonomous Database Tools</li>
+                            <li><i class="fa-solid fa-circle-play"></i> Grounded RAG Synthesis</li>
+                        </ul>
+                    </div>
+                    <!-- Stage 5 -->
+                    <div class="stage-card stage-1" style="border-color: var(--clr-blue);">
+                        <div class="stage-num" style="color: var(--clr-blue);">Stage 5: Data Extraction</div>
+                        <h3>Advanced Prompting</h3>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;">Scrape and structure feedback into parsable formats.</p>
+                        <div style="font-size: 0.8rem; color: var(--clr-blue); font-weight: 600; margin-bottom: 0.5rem;"><i class="fa-solid fa-message"></i> Prompting: JSON Output Mode</div>
+                        <ul class="stage-skills">
+                            <li><i class="fa-solid fa-circle-play"></i> Few-Shot Data Labeling</li>
+                            <li><i class="fa-solid fa-circle-play"></i> PII Anonymization logs</li>
+                            <li><i class="fa-solid fa-circle-play"></i> Chain-of-Thought Auditing</li>
+                        </ul>
+                    </div>
+                    <!-- Stage 6 -->
+                    <div class="stage-card stage-2" style="border-color: var(--clr-accent);">
+                        <div class="stage-num" style="color: var(--clr-accent);">Stage 6: Orchestration</div>
+                        <h3>Multi-Agent Crews</h3>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;">Orchestrate collaborating agent crews passing payloads.</p>
+                        <div style="font-size: 0.8rem; color: var(--clr-accent); font-weight: 600; margin-bottom: 0.5rem;"><i class="fa-solid fa-message"></i> Prompting: Agent Role Settings</div>
+                        <ul class="stage-skills">
+                            <li><i class="fa-solid fa-circle-play"></i> Crew Coordination logs</li>
+                            <li><i class="fa-solid fa-circle-play"></i> Vector Store Semantics</li>
+                            <li><i class="fa-solid fa-circle-play"></i> Autonomous Python Exec</li>
                         </ul>
                     </div>
                 </div>
                 <div style="text-align: center; margin-top: 2rem;">
-                    <p style="font-size: 0.95rem; color: var(--text-muted);">All stages include ready-to-run datasets and custom code scripts inside the repository directories.</p>
+                    <p style="font-size: 0.95rem; color: var(--text-muted);">Each stage includes ready-to-run datasets and custom code scripts inside the repository directories.</p>
                 </div>
             </div>
         </section>
