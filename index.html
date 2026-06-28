@@ -24,6 +24,7 @@
             --clr-success: #00e676;
             --clr-success-glow: rgba(0, 230, 118, 0.2);
             --clr-gold: #ffb703;
+            --clr-error: #ff5f56;
         }
 
         * {
@@ -84,7 +85,7 @@
         .tabs-nav {
             display: flex;
             justify-content: center;
-            gap: 0.8rem;
+            gap: 0.6rem;
             margin-bottom: 3rem;
             flex-wrap: wrap;
         }
@@ -92,12 +93,12 @@
         .tab-btn {
             background-color: rgba(255, 255, 255, 0.03);
             border: 1px solid var(--border-card);
-            padding: 0.7rem 1.2rem;
+            padding: 0.65rem 1.1rem;
             border-radius: 50px;
             color: var(--text-muted);
             font-family: 'Outfit', sans-serif;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             cursor: pointer;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             display: flex;
@@ -687,6 +688,143 @@
 
         .agent-crew-card.active .status-dot { background-color: var(--clr-accent); }
         .agent-crew-card.completed .status-dot { background-color: var(--clr-success); }
+
+        /* Tab 7: Interview Simulator styling */
+        .interview-grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 2.5rem;
+            align-items: start;
+        }
+
+        @media (max-width: 800px) {
+            .interview-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .interviewer-card {
+            text-align: center;
+            background-color: rgba(255,255,255,0.02);
+            border: 1px solid var(--border-card);
+            border-radius: 16px;
+            padding: 2rem;
+        }
+
+        .interviewer-pic {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--clr-blue) 0%, var(--clr-accent) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: white;
+            margin: 0 auto 1rem;
+            box-shadow: 0 4px 15px rgba(0, 180, 216, 0.3);
+        }
+
+        .score-circle {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            border: 5px solid rgba(255,255,255,0.05);
+            border-top-color: var(--clr-blue);
+            margin: 1.5rem auto 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            transition: all 0.5s;
+        }
+
+        .score-value {
+            font-size: 2rem;
+            font-weight: 800;
+            font-family: 'Outfit', sans-serif;
+            color: white;
+        }
+
+        .score-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            letter-spacing: 0.05em;
+        }
+
+        .interview-qa-box {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .interview-bubble {
+            background-color: rgba(255,255,255,0.03);
+            border: 1px solid var(--border-card);
+            border-radius: 12px 12px 12px 0;
+            padding: 1.2rem;
+            position: relative;
+        }
+
+        .interview-bubble::before {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: -10px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 10px 10px 0;
+            border-color: transparent var(--border-card) transparent transparent;
+        }
+
+        .interview-options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .interview-opt-btn {
+            background-color: rgba(255,255,255,0.02);
+            border: 1px solid var(--border-card);
+            padding: 1rem;
+            border-radius: 8px;
+            color: var(--text-main);
+            font-size: 0.9rem;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .interview-opt-btn:hover {
+            background-color: rgba(255,255,255,0.05);
+            border-color: rgba(255,255,255,0.15);
+        }
+
+        .interview-opt-btn.correct {
+            background-color: rgba(0, 230, 118, 0.05);
+            border-color: var(--clr-success);
+            color: var(--clr-success);
+        }
+
+        .interview-opt-btn.incorrect {
+            background-color: rgba(255, 95, 86, 0.05);
+            border-color: var(--clr-error);
+            color: var(--clr-error);
+        }
+
+        .interview-feedback-bubble {
+            background-color: rgba(0, 180, 216, 0.04);
+            border: 1.5px solid var(--clr-blue);
+            border-radius: 10px;
+            padding: 1rem;
+            font-size: 0.85rem;
+            color: #d8f3fd;
+            display: none;
+            animation: panelFade 0.4s ease-out forwards;
+        }
     </style>
 </head>
 <body>
@@ -705,6 +843,7 @@
             <button class="tab-btn" data-tab="sql-agent"><i class="fa-solid fa-terminal"></i> AI SQL Agent Sim</button>
             <button class="tab-btn" data-tab="prompt-sandbox"><i class="fa-solid fa-wand-magic-sparkles"></i> Prompt Sandbox</button>
             <button class="tab-btn" data-tab="crew-sim"><i class="fa-solid fa-people-group"></i> Multi-Agent Crew Sim</button>
+            <button class="tab-btn" data-tab="interview"><i class="fa-solid fa-comments"></i> Interview Sim</button>
         </nav>
 
         <!-- Tab 1: Roadmap -->
@@ -1091,6 +1230,48 @@ Click the Run button to see the output.
                     <div class="terminal-body" id="crew-console" style="min-height: 250px;">
                         <div class="placeholder-text" id="crew-placeholder">
                             &lt; Console Idle. Click Start Agentic Workflow above &gt;
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tab 7: Interview Sim -->
+        <section class="tab-panel" id="panel-interview">
+            <div class="glass-card">
+                <h2 style="margin-bottom: 1.5rem;"><i class="fa-solid fa-comments"></i> Technical Data & AI Interview Simulator</h2>
+                <div class="interview-grid">
+                    <!-- Interviewer Left column -->
+                    <div class="interviewer-card">
+                        <div class="interviewer-pic"><i class="fa-solid fa-user-tie"></i></div>
+                        <h3 style="margin-bottom: 0.2rem;">Alex Chen</h3>
+                        <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1rem;">Lead Data Scientist, Apex Corp</p>
+                        <span style="background-color: rgba(0, 180, 216, 0.15); color: var(--clr-blue); padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; font-weight: bold; text-transform: uppercase;">Technical Interviewer</span>
+                        
+                        <!-- Score Gauge -->
+                        <div class="score-circle" id="interview-gauge">
+                            <span class="score-value" id="interview-score">0%</span>
+                            <span class="score-label">Readiness</span>
+                        </div>
+                        <p id="interview-rank" style="font-size: 0.85rem; font-weight: 600; color: var(--clr-blue); margin-top: 1rem;">Rank: Novice Candidate</p>
+                    </div>
+
+                    <!-- Question Right column -->
+                    <div class="interview-qa-box">
+                        <div class="interview-bubble">
+                            <p id="interview-question" style="font-weight: 500;">Hello there! Welcome to the technical screening. Let's start with your first scenario: We have a customer churn modeling dataset where only 2% of users churn. How should we optimize the model evaluation metric?</p>
+                        </div>
+
+                        <div class="interview-options" id="interview-options-box">
+                            <!-- Options preloaded via JS -->
+                        </div>
+
+                        <div class="interview-feedback-bubble" id="interview-feedback">
+                            <!-- Feedback details -->
+                        </div>
+
+                        <div style="display: flex; justify-content: flex-end; margin-top: 1rem;">
+                            <button id="interview-next-btn" class="terminal-action-btn" style="background-color: var(--clr-accent); border-color: var(--clr-accent); color: white; display: none;">Next Scenario &rarr;</button>
                         </div>
                     </div>
                 </div>
@@ -1490,6 +1671,154 @@ Click the Run button to see the output.
             crewConsole.appendChild(line);
             crewConsole.scrollTop = crewConsole.scrollHeight;
         }
+
+        // Interview Simulator Logic
+        const interviewQA = [
+            {
+                q: "For a critical medical prediction model forecasting heart attacks (where missing a patient can be fatal), which evaluation metric should you prioritize?",
+                opts: [
+                    "High Precision - to make sure we don't annoy healthy patients with false alarms.",
+                    "High Recall - to make sure we detect as many actual heart attacks as possible, even if it raises false alarms.",
+                    "Overall Model Accuracy - because it summarizes correct predictions across both classes."
+                ],
+                correct: 1,
+                feedback: "Excellent! In medical diagnostics (or credit default checks), missing a positive case carries high costs. We prioritize Recall (Sensitivity) to avoid False Negatives. High accuracy can be deceptive in imbalanced sets."
+            },
+            {
+                q: "You are setting up a machine learning model to estimate real estate prices. You scale numerical age columns, but you have a categorical 'City' column containing 250 distinct names. What is the best strategy?",
+                opts: [
+                    "One-Hot Encoding - because it maps string labels to binary columns.",
+                    "Target Encoding (or Frequency Encoding) - because one-hot encoding 250 cities would cause high dimensionality sparsity.",
+                    "Delete the City column completely to keep the data shapes clean."
+                ],
+                correct: 1,
+                feedback: "Correct! Standard One-Hot Encoding on columns with high cardinality (many unique categories) creates hundreds of sparse columns, causing the Curse of Dimensionality. Target encoding uses category means to map categories safely."
+            },
+            {
+                q: "What is target leakage in machine learning feature engineering, and how do we prevent it?",
+                opts: [
+                    "It occurs when our training features include information about the target label that won't be available in production, leading to fake validation scores.",
+                    "It occurs when the target variable values leak out of our database due to a security breach.",
+                    "It represents null values in our target column spilling into other feature rows."
+                ],
+                correct: 0,
+                feedback: "Exactly! Target leakage occurs when features contain data that wouldn't exist at the time of making a real prediction (e.g. including refund date when predicting purchase return rates). We prevent this by separating training splits before engineering features."
+            },
+            {
+                q: "In SQL, what is a Window Function, and how does it differ from a GROUP BY aggregation?",
+                opts: [
+                    "It splits tables into window view frames, deleting old database indexes.",
+                    "GROUP BY collapses rows into summaries; Window Functions perform calculations across partitions of rows while preserving the individual row identities.",
+                    "They are identical in performance and syntax."
+                ],
+                correct: 1,
+                feedback: "Perfect! Window functions (like LAG, ROW_NUMBER) return computations across rows related to the current row, maintaining individual records instead of collapsing them. This is crucial for user session tracking."
+            },
+            {
+                q: "We need an AI data agent that translates natural language text into SQL commands. What is the main safety risk when connecting this agent directly to a production database?",
+                opts: [
+                    "SQL Injection / Unchecked Actions: The model could generate queries that drop tables or write malicious updates if user inputs aren't sanitized.",
+                    "The model will run out of API tokens immediately.",
+                    "SQLite databases do not support AI APIs."
+                ],
+                correct: 0,
+                feedback: "Superb! Text-to-SQL agents must be securely sandboxed. Letting an LLM execute arbitrary database mutations (like drop tables) can lead to data loss. We enforce read-only credentials and strict query validation."
+            }
+        ];
+
+        let currentQuestionIdx = 0;
+        let interviewScore = 0;
+
+        const qText = document.getElementById("interview-question");
+        const optionsBox = document.getElementById("interview-options-box");
+        const feedbackBox = document.getElementById("interview-feedback");
+        const nextBtn = document.getElementById("interview-next-btn");
+        const scoreVal = document.getElementById("interview-score");
+        const rankText = document.getElementById("interview-rank");
+        const gaugeEl = document.getElementById("interview-gauge");
+
+        function loadQuestion() {
+            if (currentQuestionIdx >= interviewQA.length) {
+                // Completed!
+                qText.innerText = "Congratulations! You have completed the technical screening. Let's look at your final score card.";
+                optionsBox.innerHTML = `
+                    <div style='text-align: center; padding: 2rem;'>
+                        <h3 style='color: var(--clr-success); font-size: 1.5rem; margin-bottom: 1rem;'>🎉 Screening Completed!</h3>
+                        <p style='color: var(--text-muted); margin-bottom: 1.5rem;'>You are ready to start applying for roles in the data and AI space.</p>
+                        <button class='terminal-action-btn' onclick='resetInterview()' style='background-color: var(--clr-accent); border-color: var(--clr-accent); color: white;'>Restart Interview</button>
+                    </div>
+                `;
+                feedbackBox.style.display = "none";
+                nextBtn.style.display = "none";
+                return;
+            }
+
+            const data = interviewQA[currentQuestionIdx];
+            qText.innerText = `Alex Chen: "Scenario ${currentQuestionIdx + 1}: ${data.q}"`;
+            optionsBox.innerHTML = "";
+            feedbackBox.style.display = "none";
+            nextBtn.style.display = "none";
+
+            data.opts.forEach((opt, idx) => {
+                const btn = document.createElement("button");
+                btn.className = "interview-opt-btn";
+                btn.innerHTML = opt;
+                btn.onclick = () => checkAnswer(idx);
+                optionsBox.appendChild(btn);
+            });
+        }
+
+        function checkAnswer(selectedIdx) {
+            const data = interviewQA[currentQuestionIdx];
+            const buttons = optionsBox.querySelectorAll(".interview-opt-btn");
+
+            buttons.forEach(b => b.disabled = true);
+
+            if (selectedIdx === data.correct) {
+                buttons[selectedIdx].classList.add("correct");
+                interviewScore += 20;
+                updateReadinessScore();
+            } else {
+                buttons[selectedIdx].classList.add("incorrect");
+                buttons[data.correct].classList.add("correct");
+            }
+
+            feedbackBox.innerText = data.feedback;
+            feedbackBox.style.display = "block";
+            nextBtn.style.display = "block";
+        }
+
+        function updateReadinessScore() {
+            scoreVal.innerText = `${interviewScore}%`;
+            
+            // Adjust gauge color and rank
+            if (interviewScore < 40) {
+                rankText.innerText = "Rank: Novice Candidate";
+                gaugeEl.style.borderTopColor = "var(--clr-error)";
+            } else if (interviewScore < 80) {
+                rankText.innerText = "Rank: Junior Analyst Ready";
+                gaugeEl.style.borderTopColor = "var(--clr-gold)";
+            } else {
+                rankText.innerText = "Rank: Mid-Level Specialist Ready";
+                gaugeEl.style.borderTopColor = "var(--clr-success)";
+            }
+        }
+
+        function resetInterview() {
+            currentQuestionIdx = 0;
+            interviewScore = 0;
+            updateReadinessScore();
+            loadQuestion();
+        }
+
+        nextBtn.addEventListener("click", () => {
+            currentQuestionIdx++;
+            loadQuestion();
+        });
+
+        window.addEventListener("DOMContentLoaded", () => {
+            loadQuestion();
+        });
     </script>
 </body>
 </html>
